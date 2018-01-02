@@ -1,0 +1,77 @@
+
+
+.banner-quote{
+    font-size:2.7em;
+    color:white;
+    padding:20px 80px
+    }
+
+div.contentWrapper{
+    height:500px;
+}
+div.overlay{
+    position: relative;
+    height:500px;
+    background: rgba(0,0,0,0.3);
+    padding-top:20px
+    
+}
+.h-title{
+    background:rgba(0,0,0,0.3);
+}
+.h-startedBy {
+    position: absolute;
+    bottom:5px;
+    width:100%;
+    background:rgba(0,0,0,0.3);
+    font-size:1.3em;
+    color:white;
+    padding:20px 80px
+}
+a.fr-link{
+    position: relative;
+    top:130px;
+    display:block;
+    width:200px;
+    padding:10px 30px;
+    font-size:1.3em;
+    margin:auto
+}
+div.bg{
+
+    background-image: url('../../../../assets/homepage/banner.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top:20px
+}
+div.fr1{
+  
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+div.fr2{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+
+
+
+
+@media screen and (max-width: 768px){
+    .banner-quote{
+        font-size:2em;
+        padding:10px 20px
+        }
+
+        .h-startedBy {
+            background:rgba(0,0,0,0.6);
+            bottom:30px;            
+            padding:10px 5px
+        }
+}

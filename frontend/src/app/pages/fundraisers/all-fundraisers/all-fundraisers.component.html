@@ -1,0 +1,42 @@
+<div class="container-fluid fr-banner-wrapper">
+  <img class="img-responsive fr-img" src="assets/fundraisers/fr-banner.jpg" />
+</div>
+<br/>
+<br/>
+<div class="container teasers-wrapper">
+  <div class="fr-filter-wpr" style="margin-bottom:20px">
+    <ul class="nav nav-pills" style="border:1px solid rgb(219, 219, 219)">
+      <li class="active cursor">
+        <a type="button tabs">
+          <i class="fa fa-cubes"></i>&nbsp; Trending</a>
+      </li>
+      <li class=" cursor">
+        <a type="button tabs">
+          <i class="fa fa-money"></i>&nbsp;Tax benefit</a>
+      </li>
+      <li class=" cursor">
+        <a type="button tabs">
+          <i class="fa fa-bolt"></i>&nbsp;Most active</a>
+      </li>
+      <li class=" cursor">
+        <a type="button tabs">
+          <i class="fa fa-check-square-o"></i>&nbsp;Zakaat eligible</a>
+      </li>
+      <li class=" cursor">
+        <a type="button tabs">
+          <i class="fa fa-clock-o"></i>&nbsp;Ending soon</a>
+      </li>
+      <li class=" cursor">
+        <a type="button tabs">
+          <i class="fa fa-clock-o"></i>&nbsp;Most funded</a>
+      </li>
+    </ul>
+  </div>
+  <div *ngFor="let eachTeaser of teaserDataArray">
+    <div class="col-xs-12 col-md-4 inner-wp">
+      <a class="teaser-link" [routerLink]="['/fundraisers/sadaqah-zakaat',eachTeaser.fundraiserName]">
+        <app-fundraiser-teaser [teaserData]="eachTeaser"></app-fundraiser-teaser>
+      </a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+div.stories-banner-wrapper{
+    padding:0px
+}
+img.stories-img{
+    width:100%;
+}
+
+.featured-h{
+padding:10px 150px
+}
+
+
+
+
+@media screen and (max-width:768px){
+    .featured-h{
+        padding:10px 5px
+        }
+}

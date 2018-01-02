@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-4 col-md-offset-4">
+      <div class=" form-wrapper" #formwrapper>
+        <br/>
+        <flash-messages></flash-messages>
+        <h3 class="text-accent">Admin</h3>
+        <form ngNativeValidate (ngSubmit)="onLogin()" #form="ngForm">
+          <div class="form-group">
+            <label class="text-accent">email:</label>
+            <input class="form-control" type="email" name="email" placeholder="enter your email" ngModel required>
+          </div>
+          <div class="form-group">
+            <label class="text-accent">Password</label>
+            <input class="form-control" type="password" name="password" placeholder="enter your password" ngModel required>
+          </div>
+          <button class="btn  button-accent" type="submit">Log in</button>
+        </form>
+        <br/>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+.wrapper-form{
+    padding:20px;
+    background:#f5f5f5;
+    box-shadow:0px 4px 10px rgba(0,0,0,0.2)
+}
+
+
+input[type=number] {
+    -moz-appearance:textfield;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#country-code-select option{
+    background: white;
+    color: black
+}
+
+#country-code-select{
+    width:150px
+}
+#country-code-select:focus{
+    outline:none;
+    color:#31b177
+}
+.otp-digit-input{
+    width:60px;
+    display:inline-block
+}
+#verify-otp-btn{
+    margin:0px;
+    padding: 5px 30px;
+    
+}

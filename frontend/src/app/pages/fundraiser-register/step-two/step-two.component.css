@@ -1,0 +1,23 @@
+
+
+.file-upload__input{
+display: none
+}
+
+.file-input-wrapper{
+    margin: auto;
+    width:60%
+}
+.lbl-upload{
+padding:6px 30px
+}
+
+.img-teaser-wrapper{
+    margin-top: 20px;
+    margin-bottom:20px
+}
+.img-teaser-fr{
+    width:80px;
+    height:70px;
+}
+

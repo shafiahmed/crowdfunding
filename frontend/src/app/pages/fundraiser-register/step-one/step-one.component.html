@@ -1,0 +1,84 @@
+<div class="container">
+  <div class="row">
+    <br/>
+    <br/>
+    <div style="width:70%;margin:auto">
+        <h4 class="text-center text-accent special-heading">We need your basic info to ensure authenticity and to maintain your fundraiser in future.</h4>
+    </div>
+    <div class="col-xs-12 col-md-4 col-md-offset-4">
+      <h3 class="special-heading" style="display: inline-block">Basic info</h3>
+      <form ngNativeValidate (ngSubmit)="stepTwo()" #f="ngForm">
+        <div class="form-group">
+          <label>Full Name
+            <span class="mandatory">*</span>
+          </label>
+          <input class="form-control" type="text" (keyup)="validateName($event)" [ngStyle]="{borderColor: !isNameValidated?'red':''}"
+            [(ngModel)]="campaignService.campaignFormObject.startedBy" name="startedBy" placeholder="enter your name" ngModel
+            required/>
+          <p *ngIf="!isNameValidated" class="input-caption warning">Name can't have any special characters except '.' and '-'.</p>
+        </div>
+        <div class="form-group">
+          <label>Amount you want to Raise
+            <span class="mandatory">*</span>
+          </label>
+          <input class="form-control" [ngStyle]="{borderColor: !isAmountAcceptable?'red':''}" type="number" [(ngModel)]="campaignService.campaignFormObject.amountToRaise"
+            (keyup)="checkMinFundraiserAmount($event)" name="amount" placeholder="amount" ngModel required/>
+        </div>
+        <p *ngIf="!isAmountAcceptable" class="input-caption warning">Target amount must be greater than Rs.10000.</p>
+        <div class="form-group">
+          <label>Title of your fundraiser
+            <span class="mandatory">*</span>
+          </label>
+          <input class="form-control" type="text" [(ngModel)]="campaignService.campaignFormObject.title" maxlength="70" name="title"
+            placeholder="title" ngModel required/>
+        </div>
+        <div class="form-group">
+          <label>Category
+            <span class="mandatory">*</span>
+          </label>
+          <br/>
+          <select class="form-control" [(ngModel)]="campaignService.campaignFormObject.category" name="category" ngModel required>
+            <option value="Children">Children</option>
+            <option value="Elderly">Community</option>
+            <option value="Education">Education</option>
+            <option value="Elderly">Elderly</option>
+            <option value="Emergencies">Emergencies</option>
+            <option value="Elderly">Environment</option>
+            <option value="Elderly">Healthcare</option>
+            <option value="Medical">Medical</option>
+            <option value="Elderly">Rural development</option>
+            <option value="Elderly">Social Entreprenureship</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Who are you raising funds for
+            <span class="mandatory">*</span>
+          </label>
+          <br/>
+          <input type="radio" name="beneficiary-type" [(ngModel)]="campaignService.campaignFormObject.baneficiaryType" value="individual-group"
+            ngModel required/> Individual/group&nbsp;&nbsp;
+          <input type="radio" name="beneficiary-type" [(ngModel)]="campaignService.campaignFormObject.baneficiaryType" value="registered-ngo"
+            ngModel required/> Registered NGO
+        </div>
+        <div class="form-group">
+          <label>Beneficiary
+            <span class="mandatory">*</span>
+          </label>
+          <input class="form-control" type="text" (keyup)="validateBeneficiaryName($event)" [ngStyle]="{borderColor: !isBeneficaiaryNameValidated?'red':''}"
+            [(ngModel)]="campaignService.campaignFormObject.beneficiaryName" name="beneficiaryName" placeholder="beneficiary"
+            ngModel required/>
+          <p *ngIf="!isBeneficaiaryNameValidated" class="input-caption warning">Name can't have any special characters except '.' and '-'.</p>
+        </div>
+        <div class="form-group">
+          <button class="btn button-accent pull-right" type="submit">save & continue</button>
+        </div>
+        <br/>
+        <hr>
+        <p class="input-caption text-center">If you do not wish to continue with this campaign click
+          <a type="button" (click)="destroyCampaignState()" class="text-accent cursor">here</a>
+        </p>
+      </form>
+      <canvas #canvas></canvas>
+    </div>
+  </div>
+</div>

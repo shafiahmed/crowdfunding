@@ -1,0 +1,23 @@
+
+             DEPLOYMENT GUIDE
+################################################
+
+                 FRONTEND
+                (Angular 2)
+################################################
+
+#  Development Environment Setup
+
+#  Step. 1 )  Download and install Node.js version above 8.6 or the latest build.
+#  Step. 2 )  After installation, launch terminal and navigate to directory where package.json resides 
+#  Step. 3 )  Run command " npm install " to install dependencies, prepend "sudo" in case of linux if required.
+#  Step. 4 )  After successfully installing the dependencies in the package.json file, run command " ng serve "
+              to begin compilation.
+#  Step. 5 )  The compilation of the source code must start. *Note: It can take fair amount of time to 
+              compile(upto 3 minutes)
+
+
+
+############################################
+         
+ Packages/ Dependencies and their usage

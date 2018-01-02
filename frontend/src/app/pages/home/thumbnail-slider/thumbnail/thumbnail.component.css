@@ -1,0 +1,15 @@
+.tn-wrapper{
+    width:250px;
+    height:280px;
+    margin:0px;
+    padding:8px;
+    background:white;
+    color:gray;
+    margin:5px;
+    margin-top:10px;
+    margin-bottom:10px;
+    border:1px solid transparent;
+    border-radius:10px;
+    display:inline-block;
+
+}

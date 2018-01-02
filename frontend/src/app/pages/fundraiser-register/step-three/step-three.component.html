@@ -1,0 +1,102 @@
+<div class="container">
+  <div class="row">
+    <br/>
+    <br/>
+    <div style="width:70%;margin:auto">
+        <h4 class="text-center text-accent special-heading">Fill the Bank details carefully as these will be used to receive donations.The details will be visible to the visitors on the fundraiser profile page.</h4>
+      </div>
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+      <h3>Other details</h3>
+      <!-- FORM-->
+      <form ngNativeValidate (ngSubmit)="submitCampaign()" #f="ngForm">
+        <div class="form-group">
+          <label>City</label>
+          <span class="mandatory">*</span>
+          <p class="input-caption">Please enter the city your fundraiser is based, not necessarily the city you live in.</p>
+          <input type="text" class="form-control" name="city" [(ngModel)]="campaignService.campaignFormObject.city" ngModel required/>
+        </div>
+        <!---  DOCUMENT UPLOAD -->
+        <!-- UPLOAD BUTTON OPENS MODAL -->
+        <button type="button" class="btn button-accent" data-toggle="modal" data-target="#docUpload">Upload Documents</button>
+        <!-- DOCUMENT UPLOAD MODAL -->
+        <div id="docUpload" class="modal fade" role="dialog" #docModal>
+          <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" #modalCloseBtn data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Upload Document</h4>
+              </div>
+              <!-- BODY -->
+              <div class="modal-body">
+                <div class=" text-center">
+                  <div class="col-md-10 col-md-offset-1 input-group">
+                    <input type="text" class="form-control" #fileNamePlaceholder disabled style="background:rgb(221, 221, 221)" />
+                    <span class="input-group-btn">
+                      <label for="upload" class="btn button-accent cursor lbl-upload">Choose file</label>
+                    </span>
+                  </div>
+                  <p class="input-caption">Maximum file size of 5MB; Supported formats - pdf, jpg, png (scanned documents formats)</p>
+                  <input type="file" id="upload" class="file-upload__input" name="doc-select" ngModel #fileInput />
+                  <br/>
+                  <div class="col-md-10 col-md-offset-1 input-group">
+                    <input type="text" class="form-control" (keyup)="keyPressValidation($event)" maxlength="70" name="doc-caption" #docCaption
+                      placeholder="Add a caption for your document" />
+                    <span class="input-group-addon">| {{captionCharactersLeft}}</span>
+                  </div>
+                  <p *ngIf="!isCaptionValid" class="input-caption warning">Caption is required</p>
+                  <br/>
+                </div>
+              </div>
+              <div class="modal-footer text-center">
+                <button type="button" (click)="uploadDoc()" class="btn button-accent upload-btn">Save</button>
+                <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--  ##########  DOCUMENT TEASER ##########-->
+        <div class="col-md-12 doc-teaser-wrapper" *ngFor="let item of campaignService.campaignFormObject.documentPath">
+          <img class="img-thumbnail doc-teaser-fr" [src]="item.fileExt=='pdf'?'http://localhost:3000/pdf_icon.png':'http://localhost:3000/'+item.docPath"
+          />
+          <h5 style="display:inline-block;margin:20px 0px 0px 70px">{{item.docCaption}}</h5>
+          <a class="cursor link-non-ul pull-right" style="margin-top:25px" (click)="deleteDoc(item.docPath,item._id)">&nbsp;
+            <span style="color:#9b9b9b" class="fa fa-trash"></span>
+          </a>
+
+        </div>
+        <!--  ##########  DOCUMENT TEASER ##########-->
+        <div class="form-group">
+          <label>Fundraiser video</label>
+          <input type="text" class="form-control" name="city" [(ngModel)]="campaignService.campaignFormObject.video" ngModel />
+        </div>
+
+        <!--############  BANK DETAILS ################-->
+        <div class="form group">
+            <label>Bank Name</label>
+            <input type="text" class="form-control" name="bankname" [(ngModel)]="campaignService.campaignFormObject.bankName"  maxlength="70" placeholder="Bank name" required/>
+          </div>
+        <div class="form group">
+          <label>Account Name</label>
+          <input type="text" class="form-control" name="accname" [(ngModel)]="campaignService.campaignFormObject.accName"  maxlength="70" placeholder="Your account name" required/>
+        </div>
+        <div class="form group">
+          <label>Bank Account Number</label>
+          <input type="text" class="form-control" name="accno" [(ngModel)]="campaignService.campaignFormObject.accNo" maxlength="70" placeholder="Enter your Bank Account Number" required/>
+        </div>
+        <div class="form group">
+          <label>IFSC Code</label>
+          <input type="text" class="form-control" name="ifsc" [(ngModel)]="campaignService.campaignFormObject.ifsc"  maxlength="70" placeholder="IFSC code of Bank" required/>
+        </div>
+        <!--############  BANK DETAILS END################-->
+        <br/>
+        <button class="btn button-accent pull-right" type="submit">Submit</button>
+        <button class="btn button-accent pull-left" (click)="previous()">Previous</button>
+        <br/>
+        <hr>
+        <p class="input-caption text-center">If you do not wish to continue with this campaign click
+          <a type="button" (click)="destroyCampaignState()" class="text-accent cursor">here</a>
+        </p>
+      </form>
+      <!-- FORM END -->
+    </div>

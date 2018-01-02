@@ -1,0 +1,6 @@
+<flash-messages></flash-messages>
+<app-verifyphone *ngIf="campaignService.activatePhoneVerifyForm && renderPhoneVerificatonComponent"></app-verifyphone>
+<app-step-one *ngIf="campaignService.activateStepOne"></app-step-one>
+<app-step-two *ngIf="campaignService.activateStepTwo"></app-step-two>
+<app-organization-details *ngIf="campaignService.activateOrganizationDetailsComponent"></app-organization-details>
+<app-step-three *ngIf="campaignService.activateStepThree"></app-step-three>

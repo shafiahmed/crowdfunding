@@ -1,0 +1,47 @@
+.form-wrapper{
+
+    background:#f5f5f5;
+   
+}
+
+#form{
+
+    margin:auto
+}
+.fb-btn{
+width:180px;
+margin:auto;
+margin-bottom:10px;
+display:inline-block;
+color:white;
+font-weight:bold;
+background:#3b5998
+}
+.g-btn{
+    width:180px;
+    margin:auto;
+    margin-bottom:10px;
+    display:inline-block;
+    color:white;
+    font-weight:bold;
+background: #dd5347
+
+}
+.li-btn{
+    width:180px;
+    margin:auto;
+    margin-bottom:10px;
+    display:inline-block;
+    color:white;
+    font-weight:bold;
+background:#256faa
+
+}
+
+
+
+@media screen and (max-width:769px) {
+    #form{
+        width:100%
+    }
+}

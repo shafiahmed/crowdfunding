@@ -1,0 +1,40 @@
+div.fr-banner-wrapper{
+    padding:0px
+}
+img.fr-img{
+    width:100%;
+}
+
+
+
+.teasers-wrapper{
+    max-width:70%
+}
+
+a.teaser-link:hover{
+text-decoration: none;
+color:#31b177 
+}
+
+.nav-pills>li.active>a{
+    background:#927e23 ;
+    color:white ;
+    font-weight: bold
+}
+.nav-pills>li>a {
+    border-radius: 0px;
+    padding:10px 25px;
+    color:rgb(151, 151, 151)
+}
+
+
+
+
+@media screen and (max-width: 768px){
+    .teasers-wrapper{
+        padding:0px;
+        max-width:100%
+    }
+
+    
+    }

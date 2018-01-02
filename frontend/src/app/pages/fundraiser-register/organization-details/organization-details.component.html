@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row">
+    <br/>
+    <br/>
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+      <h3>Organization details</h3>
+      <hr>
+      <form ngNativeValidate (ngSubmit)="lastStep()" #f="ngForm">
+        <div class="form-group">
+          <label>Name of the organization</label><span class="mandatory">*</span>
+          <div class="form-group">
+            <input type="text" class="form-control" [(ngModel)]="campaignService.campaignFormObject.organizationName"  name="organization-name"  ngModel required/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Website (if any)</label>
+          <input type="text" class="form-control" [(ngModel)]="campaignService.campaignFormObject.organizationWebsite" name="website" ngModel  />
+        </div>
+        <br/>
+        <h3>Statutory information</h3>
+        <hr>
+        <div class="form-group">
+          <label>PAN of the organization</label><span class="mandatory">*</span>
+          <input type="text" class="form-control" [(ngModel)]="campaignService.campaignFormObject.pan" name="pan-no" ngModel required />
+        </div>
+        <div class="form-group">
+          <label>Do you provide 80G tax exemption to donors?</label><span class="mandatory">*</span><br/>
+          <input type="radio"  name="80G-tax" value="yes" [(ngModel)]="campaignService.campaignFormObject.taxStatus" ngModel required />&nbsp;yes&nbsp;&nbsp;&nbsp;&nbsp;
+          <input type="radio"  name="80G-tax" value="no"  [(ngModel)]="campaignService.campaignFormObject.taxStatus" ngModel required />&nbsp;no
+        </div>
+        <button class="btn button-accent pull-right" type="submit">Next</button>
+        <button class="btn button-accent pull-left" (click)="previous()">Previous</button>
+        <br/>
+        <hr>
+        <p class="input-caption text-center">If you do not wish to continue with this campaign click
+          <a type="button" (click)="destroyCampaignState()" class="text-accent cursor">here</a>
+        </p>
+      </form>
+    </div>
+  </div>
+</div>

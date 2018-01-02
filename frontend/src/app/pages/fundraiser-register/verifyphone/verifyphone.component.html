@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="row ">
+    <br/>
+    <br/>
+    <!--  PHONE VERIFICATION -->
+    <div class="col-xs-12 col-md-6 col-md-offset-3 wrapper-form">
+      <h4>Verify your mobile number to proceed</h4>
+      <form ngNativeValidate class="form-inline" (ngSubmit)="sendOtp()" #phoneF="ngForm">
+        <div class="form-group">
+          <select class="btn button-bordered input-lg" id="country-code-select">
+            <option value="IN">(+91) India</option>
+            <option value="BG">(+359) Bulgaria</option>
+            <option value="LT">(+370) Lithuania</option>
+            <option value="LV">(+371) Latvia</option>
+          </select>
+          <div class="input-group">
+            <input type="number" class="form-control input-lg" name="phone" placeholder="phone number" ngModel required>
+            <span class="input-group-btn">
+              <button class="btn button-accent input-lg" type="submit">Send OTP</button>
+            </span>
+          </div>
+        </div>
+        <p style="color: green;font-size:1.2em;margin-top:10px" *ngIf="otpSentSuccess">OTP is sent to your phone no.</p>        
+      </form>
+      <br/>
+      <br/>
+      <!--  OTP VERIFICATION -->
+      <h4>Verifiy OTP received.</h4>
+      <form ngNativeValidate (ngSubmit)="verifyOtp()" #otpF="ngForm">
+        <div class="form-group">
+          <div class="otp-digit-input">
+            <input type="number"   (keyup)="moveNextDigit($event,sec)"  class="form-control input-lg" name="otp_digit_1" ngModel   required>
+          </div>
+          <div class="otp-digit-input">
+            <input type="number" #sec  (keyup)="moveNextDigit($event,third)" class=" form-control input-lg"  name="otp_digit_2" ngModel required>
+          </div>
+          <div class="otp-digit-input">
+            <input type="number" #third  (keyup)="moveNextDigit($event,forth)" class=" form-control input-lg" name="otp_digit_3" ngModel required>
+          </div>
+          <div class="otp-digit-input">
+            <input type="number" #forth  (keyup)="moveNextDigit($event,button)"  class=" form-control input-lg" name="otp_digit_4" ngModel required>
+          </div>
+          <button id="verify-otp-btn" #button class="btn button-accent input-lg" [disabled]="!otpSentSuccess" type="submit">Verify</button>
+        </div>
+        <br/>
+        <h5 *ngIf="otpIncorrect">{{otpVerificationStatusMessage}}</h5>
+
+      </form>
+    </div>
+  </div>
+</div>

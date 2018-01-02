@@ -1,0 +1,60 @@
+<div id="homeBanner" class="carousel slide" data-ride="carousel" data-interval="3000" data-pause="false">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#homeBanner" data-slide-to="0" class="active"></li>
+    <li data-target="#homeBanner" data-slide-to="1"></li>
+    <li data-target="#homeBanner" data-slide-to="2"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active bg contentWrapper">
+      <h3 class="banner-quote ">
+        HELP others.
+        <br/> HELP yourself.
+      </h3>
+      <h3 class="banner-quote ">
+        There is no exercise better for the heart than reaching down and lifting people up ― John Holmes
+      </h3>
+
+    </div>
+<!-- ON LOAD-->
+
+    <div *ngIf="featuredFr != null" class="item fr1 contentWrapper" [ngStyle]="{backgroundImage: 'url('+featuredFr[0].imagePath[0]+')'}">
+        <div class="overlay">
+            <h3 class="h-title banner-quote ">
+              {{featuredFr[0].title}}
+            </h3>
+            <a class="btn btn-bordered-trans link-non-ul text-center fr-link" [routerLink]="['/fundraisers/sadaqah-zakaat',featuredFr[0].fundraiserName]">
+            Support
+            </a>
+        <h4 class="h-startedBy " ><strong>Campaign By: {{featuredFr[0].startedBy}}</strong></h4>
+        
+          </div>
+    </div>
+
+    <div *ngIf="featuredFr != null" class="item fr2 contentWrapper" [ngStyle]="{backgroundImage: 'url('+featuredFr[1].imagePath[0]+')'}">
+      <div class="overlay">
+        <h3 class="h-title banner-quote ">
+          {{featuredFr[1].title}}
+        </h3>
+        <a class="btn btn-bordered-trans link-non-ul text-center fr-link" [routerLink]="['/fundraisers/sadaqah-zakaat',featuredFr[1].fundraiserName]">
+         Support
+          </a>
+        <h4 class="h-startedBy " ><strong>Campaign By: {{featuredFr[1].startedBy}}</strong></h4>
+      </div>
+    </div>
+<!-- ON LOAD-->    
+    
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#homeBanner" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#homeBanner" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>

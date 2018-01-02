@@ -1,0 +1,126 @@
+<div *ngIf="(responseData | async)?.success" class="on-load accent-gray-light">
+    <div class="container title-div">
+        <h1 class="text-gray">
+            <strong>{{(responseData | async)?.frProfileData[0]?.title}}</strong>
+        </h1>
+    </div>
+
+    <div class="container outer-container">
+
+        <!-- ######################################## ROW ONE #############################################-->
+
+        <div class="row row-wrapper">
+            <!-- ########### LEFT ################-->
+            <div class="col-xs-12 col-md-8 row1-left">
+                <div class="img-wrapper">
+                    <img class="img-responsive fr-img" [src]="(responseData | async)?.frProfileData[0]?.imagePath[0]" />
+                </div>
+            </div>
+
+
+            <!-- ########### RIGHT ################-->
+       
+            <div class="col-xs-12 col-md-4 row1-right">
+                <!--  LOCATION AND CATEGORY -->
+                <div class="col-xs-12 text-gray-l location" style="border-bottom:1px solid #e9e9e9">
+                    <p class="h5 pull-left">
+                        <i class="glyphicon glyphicon-map-marker"></i>&nbsp;
+                        <strong>{{(responseData | async)?.frProfileData[0]?.city}}</strong>
+                    </p>
+                    <p class="h5 pull-right">
+                        <i class="glyphicon glyphicon-tag"></i>&nbsp;
+                        <strong>{{(responseData | async)?.frProfileData[0]?.category}}</strong>
+                    </p>
+                </div>
+
+                <!--  AMOUNT RAISED AND PROGRESS -->
+                <div class="col-xs-12">
+                    <div style="margin:20px 0px 0px 0px ;padding:5px 0px">
+                        <p class="bold-numbers-gr" style="margin:0px">Rs.{{(responseData | async)?.frProfileData[0]?.amountRaised}}</p>
+                        <p class="text-gray-l" style="margin:0px;font-size:1.2em">Raised of {{(responseData | async)?.frProfileData[0]?.amountToRaise}}</p>
+                    </div>
+                </div>
+
+                <!-- Progress Bar -->
+                <div class="col-xs-12 pr-br-wpr">
+                    <div style="margin: 0px;padding:0px">
+                        <div class="progress">
+                            <div class="progress-bar accent-light" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width:40%">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Supporters -->
+                <div class="col-xs-12 supporters-div ">
+                    <div class="col-xs-6 pull-left" style="margin: 0px;padding:0px">
+                        <h2>
+                            <strong>67</strong>
+                        </h2>
+                        <p>
+                            <strong>Supporters</strong>
+                        </p>
+                    </div>
+                    <div class="col-xs-6 pull-right" style="margin: 0px;padding:0px">
+                        <h2>
+                            <strong>34</strong>
+                        </h2>
+                        <p>
+                            <strong>Days left</strong>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- DONATE-->
+                <div class="col-xs-12 btn-wrapper text-center">
+                    <button class="btn donate-btn button-accent" type="button">
+                        <span style="font-size:1.3em">
+                            <strong>Donate Now</strong>
+                        </span>
+                    </button>
+                    <p class="input-caption ">Payment options: Account number</p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ######################################## ROW TWO #############################################-->
+
+        <div class="row row-wrapper">
+            <!-- ########### LEFT ################-->            
+            <div class="col-xs-12 col-md-8 row2-left">
+                <h3 class="text-center special-heading">STORY</h3>
+                <p class="lead">{{(responseData | async)?.frProfileData[0]?.story}}</p>
+
+                <br/><br/>
+                <h3><strong>Account Name: </strong>{{(responseData | async)?.frProfileData[0]?.accName}}</h3>
+                <h3><strong>Bank Name: </strong>{{(responseData | async)?.frProfileData[0]?.bankName}}</h3>
+                <h3><strong>Account No: </strong>{{(responseData | async)?.frProfileData[0]?.accNo}}</h3>
+                <h3><strong>IFSC code: </strong>{{(responseData | async)?.frProfileData[0]?.ifsc}}</h3>
+            </div>
+
+    
+
+
+            <!-- ########### RIGHT ################-->
+            
+            <div class="col-xs-12 col-md-4  row2-right">
+                <div class="started-by accent-gray-light">
+                    <p class="h5">
+                        <strong>Campaign By:&nbsp;{{(responseData | async)?.frProfileData[0]?.registeredUserData?.name}}</strong>
+                    </p>
+                    <hr style="border:0.5px solid #c9c9c9">
+                    <p class="h5">
+                        <strong>
+                            <i class="fa fa-envelope"></i> Contact</strong>
+                    </p>
+                    <p class="h5">
+                        <strong>
+                         2 Campaigns | 4 Donated
+                        </strong>
+                    </p>
+                </div>
+            </div>
+        </div>   <!-- ########### ROW TWO END ################-->
+    </div>
+</div>

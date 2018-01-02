@@ -1,0 +1,48 @@
+div.hiw-banner-wrapper{
+    position:relative;
+    padding:0px;
+    height:450px
+}
+.hit-banner-img{
+display: block
+}
+
+.hit-banner-img-sm{
+    display:none
+        }
+div.overlay{
+    position:absolute;
+    background:rgba(0,0,0,0.3);
+    top:100px;
+    padding:20px;
+    color:white;
+    left:0px
+}
+
+div.how-to{
+    margin-top:80px
+}
+
+img.hiw-imgs{
+    margin:auto;
+    max-width:250px
+}
+
+
+@media screen and (max-width: 768px){
+
+    div.hiw-banner-wrapper{
+        position:relative;
+        padding:0px;
+        height:auto
+    }
+
+
+    .hit-banner-img{
+        display:none;
+        height:300px;
+    }
+    .hit-banner-img-sm{
+        display:block
+    }
+}

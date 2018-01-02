@@ -1,0 +1,28 @@
+
+
+
+.file-upload__input{
+    display: none
+    }
+    
+    .file-input-wrapper{
+        margin: auto;
+        width:60%
+    }
+    .lbl-upload{
+    padding:6px 30px
+    }
+    
+    .doc-teaser-wrapper{
+        margin-top: 10px;
+        margin-bottom:10px
+    }
+    .doc-teaser-fr{
+        width:80px;
+        height:70px;
+    }
+    .upload-btn{
+        padding:6px 30px
+    }
+
+    

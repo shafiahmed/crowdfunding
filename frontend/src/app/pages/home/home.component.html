@@ -1,0 +1,108 @@
+<div class="container-fluid">
+    <!--  BANNER AND LOGIN/SIGNUP SECTION -->
+    <div class="row">
+        <div class="col-md-12 banner-col-div">
+            <app-home-banner></app-home-banner>
+        </div>
+
+
+    </div>
+</div>
+
+<div class="col-xs-12 col-md-12 login-div" style="background:#f5f5f5">
+    <!--  LOGIN SIGNUP COMPONENT CONTAINING LOGIN SIGNUP SEPARATE COMPONENT-->
+    <app-loginsignup></app-loginsignup>
+</div>
+
+
+
+
+<br/>
+<br/>
+<!--   SCROLLER FOR THUMBNAILS -->
+<h2 class="special-heading text-center">SUCCESS STORIES</h2>
+<app-thumbnail-slider></app-thumbnail-slider>
+<br/>
+<br/>
+
+
+
+<div class="container tiles-wrapper">
+
+    <div *ngIf="teaserDataArray;else loading">
+        <div class="fr-filter-wpr" style="margin-bottom:20px;">
+            <ul class="nav nav-pills" style="border:1px solid rgb(219, 219, 219)">
+                <li #trending class="active cursor">
+                    <a type="button tabs">
+                    <i class="fa fa-cubes"></i>&nbsp; Trending</a>
+                </li>
+                <li class=" cursor">
+                    <a type="button tabs">
+                        <i class="fa fa-money"></i>&nbsp;Tax benefit</a>
+                </li>
+                <li class=" cursor">
+                    <a type="button tabs">
+                        <i class="fa fa-bolt"></i>&nbsp;Most active</a>
+                </li>
+                <li #zakaatEligible class=" cursor"  >
+                    <a type="button tabs">
+                        <i class="fa fa-check-square-o"></i>&nbsp;Zakaat eligible</a>
+                </li>
+                <li class=" cursor">
+                    <a type="button tabs">
+                        <i class="fa fa-clock-o"></i>&nbsp;Ending soon</a>
+                </li>
+                <li class=" cursor">
+                    <a type="button tabs">
+                        <i class="fa fa-clock-o"></i>&nbsp;Most funded</a>
+                </li>
+            </ul>
+        </div>
+        <div *ngFor="let item of (teaserDataArray | slice:teaserDataArray.length - 3);" class="col-xs-12 col-md-4">
+            <a [routerLink]="['/fundraisers/sadaqah-zakaat',item.fundraiserName]">
+                <app-fr-tiles [teaserData]="item"></app-fr-tiles>
+            </a>
+        </div>
+    </div>
+    <ng-template #loading>
+        <h2 class="text-center">Loading....</h2>
+    </ng-template>
+</div>
+
+<div class="container-fluid" style="margin-top:100px;padding-bottom:50px;border-top:2px solid #e9e9e9">
+    <div class="row">
+        <div class="col-xs-12 col-md-4 text-center create">
+            <h3 class="special-heading">CREATE A CAMPAIGN</h3>
+            <div style="padding:10px 60px">
+                <p class="lead">Easily create a campaign page, that represents your cause and story.</p>
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-4 text-center spread">
+            <h3 class="special-heading">SPREAD THE WORD</h3>
+            <div style="padding:10px 60px">
+                <p class="lead">Share your cause and raise support and awareness through integrated social sharing tool.</p>
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-4 text-center raise">
+            <h3 class="special-heading">RAISE FUNDS</h3>
+            <div style="padding:10px 60px">
+                <p class="lead">Securely collect donation directly on your campaign page, both online and on mobile.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container-fluid accent-dark fr-invitation">
+    <div class="col-xs-12 col-md-8 col-md-offset-2">
+        <h3 class="text-center">
+            <strong>Join the community that is committed to making a difference in the world we share.</strong>
+        </h3>
+        <div class="col-xs-12 col-md-6 expl-bt-div">
+            <a routerLink="/fundraisers/sadaqah-zakaat" class="btn btn-bordered-trans form-control link-non-ul">Explore fundraisers</a>
+        </div>
+        <div class="col-xs-12 col-md-6 str-bt-div">
+            <a routerLink="/fundraiser/register" class="btn btn-bordered-trans form-control link-non-ul">Start a fundraiser</a>
+        </div>
+    </div>
+</div>

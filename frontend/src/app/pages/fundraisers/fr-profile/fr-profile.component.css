@@ -1,0 +1,105 @@
+/*
+All light gray hues : background, border etc are  gray #e9e9e9
+
+*/
+
+.outer-container{
+    width:70%
+}
+div.row-wrapper{
+    background:white;
+    padding:0px;
+    
+}
+
+div.row1-left{
+    padding:10px; border:2px solid #e9e9e9; border-bottom:0px
+}
+div.row1-right{
+    border:2px solid #e9e9e9;
+    border-left:0px;
+    border-bottom:0px;
+    }
+
+div.title-div{
+    max-height: 150px;
+    max-width:70%
+}
+
+div.title-div h1{
+    padding:30px 100px 20px 0px;
+
+}
+div.img-wrapper{
+    width:100%;
+}
+.fr-img{
+margin:auto;
+width:100%;
+}
+
+.bold-numbers-gr{
+    font-size:2.2em;
+    font-weight:bold
+}
+.pr-br-wpr{
+    margin-top:20px
+}
+.supporters-div {
+    margin-top:20px
+}
+.supporters-div h2,.supporters-div p {
+    margin:0px
+}
+div.btn-wrapper{
+    margin-top:20px
+
+}
+.donate-btn{
+    width:100%;
+    padding:12px
+}
+
+div.fb-shr-wrapper{
+    margin-top:20px
+}
+/*################################ ROW TWO ############################*/
+
+
+
+
+div.row2-left{
+ padding:10px;border:2px solid #e9e9e9
+}
+div.row2-right{
+    padding:10px;
+
+    }
+
+div.started-by{
+height:150px;
+padding:10px 20px;
+
+}
+
+/*########################  TEXT ####################*/
+ 
+
+
+
+@media screen and (max-width: 768px){
+    
+    .outer-container{
+        width:100%
+    } 
+
+    div.title-div{
+        max-width:100%;
+        padding: 10px 5px
+    }
+    div.title-div h1{
+        font-size:1.3em;
+        margin:0px;
+        padding:10px
+    }
+        }

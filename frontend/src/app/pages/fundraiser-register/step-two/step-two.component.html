@@ -1,0 +1,65 @@
+<div class="container">
+  <div class="row">
+    <br/>
+    <br/>
+    <div style="width:70%;margin:auto">
+      <h4 class="text-center text-accent special-heading">This portion of form is crucial from donors perspective.Give your fundraiser a unique name, best image and a promising
+        story.</h4>
+    </div>
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+      <h3 class="special-heading">Fundraiser details</h3>
+      <form ngNativeValidate (ngSubmit)="stepThree()" #f="ngForm">
+        <div class="form-group">
+          <label>Name of your fundraiser</label>
+          <p class="input-caption">This name will be visible in the URL of the fundraiser, which can be shared with others.
+            <br/>Try to keep it simple & unique.</p>
+          <div class="input-group">
+            <span class="input-group-addon">www.ibtida.com/fundraiser/</span>
+            <input type="text" class="form-control" (keyup)="checkUniqueFundraiserName($event)" [(ngModel)]="typed_fr_name" name="fundraiser-url-name"
+              required/>
+          </div>
+          <p class="input-caption">Please use only Alphabet, numbers & hyphens.</p>
+          <p *ngIf="fundraiserNameMatched" class="input-caption warning">Sorry!,there is already a fundraiser with this name.Try another name.</p>
+          <p *ngIf="containsSpecialCharacter" class="input-caption warning">Special characters except hyphen(-) are not allowed.</p>
+        </div>
+        <!---  IMAGE UPLOAD -->
+        <div class="col-md-12 form-group">
+          <label>Fundraiser Image</label>
+          <p class="input-caption">Recommended dimension of 603x436px. Max file size of 5mb</p>
+          <p class="input-caption">Promising and good images tend to draw more visitors.</p>
+          <p class="warning">{{message}}</p>
+          <p *ngIf="isImage === false" class="warning">Only images are allowed.</p>
+          <!--######################################################-->
+          <div class=" text-center">
+            <label for="upload" class="btn button-accent cursor lbl-upload">Upload image</label>
+            <input type="file" id="upload" class="file-upload__input" (change)="uploadImage()" [disabled]="uploadButtonDisabled" name="myImage"
+              ngModel #fileInput />
+            <a *ngIf="imagePath" class="cursor link-non-ul" (click)="deleteImage()">&nbsp;
+              <span style="color:#9b9b9b" class="fa fa-trash"></span>
+            </a>
+            <br/>
+            <div *ngIf="imagePath" class="col-xs-12 img-teaser-wrapper">
+              <img class="img-thumbnail img-teaser-fr" [src]="'http://localhost:3000/'+campaignService.campaignFormObject.imagePath[0]"
+              />
+            </div>
+          </div>
+          <!--######################################################-->
+        </div>
+        <br/>
+        <div class="form-group">
+          <label>Story:</label>
+          <textarea class="form-control" rows="10" cols="50" name="story" [(ngModel)]="_campaignService.campaignFormObject.story" placeholder="write your story"
+            ngModel required>
+          </textarea>
+        </div>
+        <button class="btn button-accent pull-right" type="submit">Next</button>
+        <button class="btn button-accent pull-left" (click)="previous()">Previous</button>
+        <br/>
+        <hr>
+        <p class="input-caption text-center">If you do not wish to continue with this campaign click
+          <a type="button" (click)="destroyCampaignState()" class="text-accent cursor">here</a>
+        </p>
+      </form>
+    </div>
+  </div>
+</div>

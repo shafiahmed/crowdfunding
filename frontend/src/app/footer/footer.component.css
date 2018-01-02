@@ -1,0 +1,42 @@
+div.subscr-wrapper{
+    background:#e9e9e9;
+    padding:30px 10px;
+    min-height:200px;
+}
+
+.footer-wrapper{
+    min-height:300px;
+}
+
+.social-icon-wrapper{
+    margin:auto
+}
+
+.fb,.g,.li,.yt{
+    display:inline-block;
+    border:1px solid transparent;
+    border-radius:100%;
+    width:50px;
+    height:50px;
+    margin:20px 10px
+}
+
+.fb{
+    background:#3b5998
+}
+.g{
+    background:#dd5347
+}
+.li{
+    background:#256faa
+}
+.yt{
+    background:#dd5347
+}
+
+
+h3.icon{
+    color:white;
+    margin:10px;
+    padding:0px
+}

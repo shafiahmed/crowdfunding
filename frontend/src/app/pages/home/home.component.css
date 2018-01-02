@@ -1,0 +1,53 @@
+.banner-div{
+    background-image: url('../../../assets/homepage/banner.jpg');
+    background-repeat: no-repeat;
+    background-size:cover;
+    height:500px
+}
+div.banner-col-div{
+    padding:0px
+}
+.login-div{
+    height:400px
+}
+
+div.tiles-wrapper{
+
+    width:70%
+}
+
+div.fr-invitation{
+    min-height:200px;
+    padding:10px 10px 30px 10px
+}
+
+div.expl-bt-div{
+    padding:10px 5px 10px 50px
+}
+div.str-bt-div{
+    padding:10px 50px 10px 5px
+}
+
+.nav-pills>li.active>a{
+    background:#927e23 ;
+    color:white ;
+    font-weight: bold
+}
+.nav-pills>li>a {
+    border-radius: 0px;
+    padding:10px 25px;
+    color:rgb(151, 151, 151)
+}
+
+@media screen and (max-width: 768px){
+    .banner-quote{
+        font-size:2em;
+        }
+
+        div.expl-bt-div{
+            padding:10px
+        }
+        div.str-bt-div{
+            padding:10px 
+        }
+}

@@ -1,0 +1,16 @@
+<div>    
+  <div class="col-xs-12 col-md-4 col-md-offset-4" style="padding-top:20px;">
+    <div class="col-xs-6 cursor text-center div-tab" (click)="activeLogin()" [ngStyle]="{borderBottom: loginActive ?'4px solid #927e23':'4px solid transparent'}">
+      <h4 class="text-accent">Login</h4>
+    </div>
+    <div class="col-xs-6 cursor text-center div-tab" [ngStyle]="{borderBottom: signupActive ?'4px solid #927e23   ':'4px solid transparent'}"
+      (click)="activeSignup()">
+      <h4 class="text-accent">Sign-up</h4>
+    </div>
+  </div>
+  <br/>
+  <br/>
+  <flash-messages></flash-messages>
+  <app-login *ngIf="loginActive"></app-login>
+  <app-signup *ngIf="signupActive"></app-signup>
+</div>

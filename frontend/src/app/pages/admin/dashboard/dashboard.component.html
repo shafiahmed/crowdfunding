@@ -1,0 +1,57 @@
+<div class="container">
+  <h1 class="special-heading text-center">Welcome Admin.This is your dashboard.</h1>
+</div>
+<div class="container wrapper-outer">
+  <div *ngFor="let fr of fundraisersArray" class="col-xs-12 col-md-6 col-md-offset-3">
+    <div class="col-xs-12 col-md-12 img-div">
+      <img class="img-responsive fr-image" [src]="fr.imagePath[0]" />
+    </div>
+    <button class="text-center btn btn-primary" (click)="publish(fr._id,fr )">Publish</button>
+    <button class="text-center btn button-accent" (click)="zakaatEligible(fr._id,fr)">Zakaat eligible</button>
+    <h4>
+      <span style="font-weight: bold">Title :</span> {{fr.title}}</h4>
+    <h4>
+      <span style="font-weight: bold">Started by :</span> {{fr.startedBy}}</h4>
+    <h4>
+      <span style="font-weight: bold">City :</span> {{fr.city}}</h4>
+    <h4>
+      <span style="font-weight: bold">Verified :</span> {{fr.verified}}</h4>
+    <h4>
+      <span style="font-weight: bold">Zakaat Eligible :</span> {{fr.zakaatEligible}}</h4>
+    <h4>
+      <span style="font-weight: bold">Amount to raise :</span> {{fr.amountToRaise}}</h4>
+    <h4>
+      <span style="font-weight: bold">Category :</span> {{fr.category}}</h4>
+    <h4>
+      <span style="font-weight: bold">Beneficaiary Name :</span> {{fr.beneficiaryName}}</h4>
+    <h4>
+      <span style="font-weight: bold">Organization Name :</span> {{fr.organizationName}}</h4>
+    <h4>
+      <span style="font-weight: bold">Pan No :</span> {{fr.pan}}</h4>
+    <h4>
+      <span style="font-weight: bold">Fundraiser Name :</span> {{fr.fundraiserName}}</h4>
+    <br/>
+    <h2 class="special-heading text-center">STORY</h2>
+    <p class="lead">{{fr.story}}</p>
+    <br/>
+    <h4>
+      <span style="font-weight: bold">Amount raised :</span> {{fr.amountRaised}}</h4>
+    <h2 class="special-heading text-center">DOCUMENTS</h2>
+    <ul>
+      <li *ngFor="let item of fr.documentPath">
+        <a [href]=item.docUrl>{{item.docCaption}}</a></li>
+    </ul>
+    <br/>
+    <h2 class="text-center">BANK DETAILS</h2>
+    <h4>
+      <span style="font-weight: bold">Bank Name :</span> {{fr.bankName}}
+    </h4>
+    <h4>
+      <span style="font-weight: bold">Account Name :</span> {{fr.accName}}</h4>
+    <h4>
+      <span style="font-weight: bold">Account No :</span> {{fr.accNo}}</h4>
+    <h4>
+      <span style="font-weight: bold">IFSC :</span> {{fr.ifsc}}</h4>
+
+  </div>
+</div>

@@ -1,0 +1,112 @@
+/* You can add global styles to this file, and also import other style files */
+
+*{
+    font-family: "Open Sans", sans-serif;
+    box-sizing: border-box
+}
+
+.accent-dark{
+    background: #5f5217  
+}
+
+.accent-gray-light{
+    background: #e9e9e9
+}
+
+.accent-light{
+    background: #927e23   
+}
+
+.dark-bg{
+    background: #35301e 
+}
+.mandatory{
+    padding-left:3px;
+    color:#ff4141fa;
+    font-size:1.2em;
+}
+
+/*===================   BUTTON STYLES ====================*/
+
+.button-accent{
+    background: #927e23  ;
+    color:white;
+    padding: 5px 20px
+    
+}
+
+.button-accent:focus{
+color:white
+}
+
+.button-accent:hover{
+    background: #927e23   ;
+    color:white
+}
+.button-bordered{
+    background: white;
+    color:#927e23  ;
+    border:1px solid #927e23   
+}
+.button-bordered:hover{
+    color:#927e23   
+}
+.btn-bordered-trans{
+    background: rgba(0,0,0,0.4);
+    color:#927e23  ;
+    border:1px solid #927e23   
+}
+.btn-bordered-trans:hover{
+    background: #927e23   ;
+    color: white;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*====================   TEXT STYLES  =================*/
+
+.text-accent{
+    color:#927e23  
+}
+.input-caption{
+    font-size:0.8em;
+    color: gray;
+    margin:0px;
+    padding:0px
+}
+.cursor{
+    cursor: pointer;
+}
+.warning{
+    color:red
+}
+.text-white{
+    color:white
+}
+.text-gray{
+    color:#444444
+}
+.text-gray-l{
+    color:#afafaf
+}
+.special-heading{
+    padding-bottom:20px;
+    font-weight: bold;
+    border-bottom:2px solid #e9e9e9
+}
+/*  ==================  MISCELLANEOUS  ====================*/
+/*links*/
+.link-non-ul:hover{
+    text-decoration:none
+}
